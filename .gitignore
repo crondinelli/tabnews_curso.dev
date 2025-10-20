@@ -1,0 +1,9 @@
+# dependências e builds
+node_modules/
+.next/
+out/
+dist/
+.build/
+*.log
+.env
+.env.*
