@@ -3,3 +3,6 @@ function status(request, response) {
 }
 
 export default status;
+
+// async para tornar a função asincrona
+// await para aguardar a resposta
