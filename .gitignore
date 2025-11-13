@@ -5,5 +5,3 @@ out/
 dist/
 .build/
 *.log
-.env
-.env.*
