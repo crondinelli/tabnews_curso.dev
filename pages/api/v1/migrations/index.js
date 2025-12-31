@@ -1,7 +1,7 @@
 import migrationRunner from "node-pg-migrate";
 import { resolve } from "node:path";
 import database from "infra/database.js";
-import { error } from "node:console"; 
+import { error } from "node:console";
 
 export default async function migrations(request, response) {
   const allowedMethods = ["GET", "POST"];
@@ -11,7 +11,7 @@ export default async function migrations(request, response) {
     });
   }
 
-let dbClient;
+  let dbClient;
 
   try {
     dbClient = await database.getNewClient();
@@ -39,16 +39,13 @@ let dbClient;
       }
       return response.status(200).json(migratedMigrations);
     }
-
   } catch (error) {
-    console.error(error)
+    console.error(error);
     throw error;
   } finally {
     await dbClient.end();
   }
-  }
 }
-
 // async para tornar a função asincrona
 // await para aguardar a resposta
 //snake_case parajson sempre separado por _
